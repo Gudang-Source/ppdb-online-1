@@ -73,7 +73,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>index.html">PSB SMPIT BINA INSANI</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>index.html">PSB SMA DUMMY 1</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -92,7 +92,7 @@
                     <img src="<?php echo base_url(); ?>assets/build/img/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SMPIT BINA INSANI</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SMA DUMMY 1</div>
                     <div class="email">Semarang, Jawa Tengah</div>
                 </div>
             </div>
@@ -134,7 +134,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2018 <a href="javascript:void(0);">SMPIT BINA INSANI</a>.
+                    &copy; 2018 <a href="javascript:void(0);">SMA DUMMY 1</a>.
                 </div>
                 <!-- <div class="version">
                     <b>by: </b> <a href="https://neticx.github.io">@Neticx</a>

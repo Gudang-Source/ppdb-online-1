@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Form Pendaftaran SMPIT Bina Insani </title>
+    <title>Form Pendaftaran SMA DUMMY 1 </title>
     <!-- Bootstrap -->
     <link href="<?= base_url(); ?>assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -103,7 +103,7 @@
                       <p>Langkah-langkah pembayaran sebagai berikut :</p>
                       <ul>
                       <li>Biaya Pendaftaran sebesar Rp. 200.000</li>
-                      <li>Pembayaran bisa datang langsung ke sekretariat PPDB SMPIT Bina Insani Semarang atau</li>
+                      <li>Pembayaran bisa datang langsung ke sekretariat PPDB SMA DUMMY 1 Semarang atau</li>
                       <li>Transfer ke rekening BRI 6049-01-01698-7539 a/n Fidyan Fauziyyah Zain</li>
                       <li>melakukan konfirmasi pembayaran ke 0857-2409-0494 a/n Ustadzah Fidyan (untuk prmbayaran via transfer)</li>
                       </ul>

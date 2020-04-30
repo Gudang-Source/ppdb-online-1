@@ -29,7 +29,7 @@
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">ADMIN</a>
-            <small>SMPIT BINA INSANI</small>
+            <small>SMA DUMMY 1</small>
         </div>
         <div class="card">
             <div class="body">

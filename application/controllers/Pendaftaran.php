@@ -284,7 +284,7 @@ class Pendaftaran extends CI_Controller {
         $pdf->nonstandard('Telepon/HP', $surat[0]['handphone']);
         $pdf->nonstandard('Orang Tua/Wali calon siswa dari', $surat[0]['ortu_dari']);
         $pdf->ln(2);
-        $pdf->nonstandard("Dengan Ikhlas menginfaqan dana pendidikan kepada Pesantren Tahfidzul Qur'an Al Azzam SMPIT Bina Insani :", '');
+        $pdf->nonstandard("Dengan Ikhlas menginfaqan dana pendidikan kepada Pesantren Tahfidzul Qur'an Al Azzam SMA DUMMY 1 :", '');
         $pdf->ln(2);
         $pdf->standard(1,'Paket Pendidikan', 'Rp. 1.700.000');
         $pdf->standard(2,'Bahan Seragam Santri(4 Stel)', 'Rp. 900.000');
@@ -316,7 +316,7 @@ class Pendaftaran extends CI_Controller {
         $pdf->substandard('','1. Menyerahkan sepenuhnya pendiikan calon siswa kepada pihak sekolah.', '');
         $pdf->substandard('','2. Bersedia membimbing dan mengawasi calon siswa tersebut di lingkungan dan masyarakat.', '');
         $pdf->substandard('','3. Apabila terjadi pengunduran diri pada putra/putri kami, maka 50% biaya administrasi yang sudah dibayar kami', '');
-        $pdf->substandard('','   infaqan kepada SMPIT BINA INSANI.', '');
+        $pdf->substandard('','   infaqan kepada SMA DUMMY 1.', '');
         $pdf->nonstandard("Demikian pernyataan ini kami buat, semoga memberikan manfaat yang sebesar besarnya pada pendidikan putra/putri kami", '');
         $pdf->substandard('',"dan mendapatkan ridho Allah Subhanallahu Wa Ta'ala. Amiin.", '');
         $pdf->assign();

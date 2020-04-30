@@ -2,7 +2,7 @@
   <div class="container-fluid">
       <div class="block-header">
           <h2>
-              SMPIT BINA INSANI
+              SMA DUMMY 1
               <small>Tahun Ajaran 2018/2019</a></small>
           </h2>
       </div>

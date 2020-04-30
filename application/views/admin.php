@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Form Pendaftaran SMPIT Bina Insani </title>
+    <title>Form Pendaftaran SMA DUMMY 1 </title>
     <!-- Bootstrap -->
     <link href="<?= base_url(); ?>assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
