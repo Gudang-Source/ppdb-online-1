@@ -101,7 +101,7 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MENU</li>
-                    <li class="<?= $this->uri->segment(1) === 'pendaftaran' ? "active" : ""; ?>">
+                    <li class="<?= $this->uri->segment(1) === 'pendaftaran' || $this->uri->segment(1) == '' ? "active" : ""; ?>">
                         <a href="<?php echo base_url() . 'pendaftaran'; ?>">
                             <i class="material-icons">home</i>
                             <span>PENDAFTARAN</span>
