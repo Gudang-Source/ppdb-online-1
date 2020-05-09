@@ -1,6 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Auth_model extends CI_Model {
+class Auth_model extends CI_Model
+{
 
 	private $table = "adm";
 	private $_data = array();
@@ -20,14 +21,13 @@ class Auth_model extends CI_Model {
 		$this->db->where("username", $username);
 		$query = $this->db->get($this->table);
 
-		if ($query->num_rows())
-		{
+
+		if ($query->num_rows()) {
 			// found row by username
 			$row = $query->row_array();
 
 			// now check for the password
-			if ($row['password'] == MD5($password))
-			{
+			if ($row['password'] == md5($password)) {
 				// we not need password to store in session
 				unset($row['password']);
 				$this->_data = $row;
@@ -36,8 +36,7 @@ class Auth_model extends CI_Model {
 
 			// password not match
 			return 'pass salah';
-		}
-		else {
+		} else {
 			// not found
 			return 'name salah';
 		}
@@ -64,7 +63,8 @@ class Auth_model extends CI_Model {
 		return $id[0]['id_member'];
 	}
 
-	public function data_provinsi(){
+	public function data_provinsi()
+	{
 		$this->db->from('provinsi');
 		$query = $this->db->get();
 
@@ -73,7 +73,8 @@ class Auth_model extends CI_Model {
 
 
 
-	public function chec_user_exsis($username){
+	public function chec_user_exsis($username)
+	{
 		$this->db->from('adm');
 		$this->db->where('username', $username);
 		// $this->db->query("SELECT * FROM member WHERE username = ");
@@ -83,11 +84,8 @@ class Auth_model extends CI_Model {
 		//jika ada return true
 		if (count($active) > 0) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
-
 	}
-
-
 }

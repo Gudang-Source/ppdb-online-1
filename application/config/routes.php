@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -50,7 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'pendaftaran/newForm';
-$route['login'] = 'auth';
+$route['login'] = 'auth/index';
+$route['pendaftaran'] = 'pendaftaran/newForm';
+$route['admin'] = 'admin_site/index';
 $route['logout'] = 'auth/logout';
 $route['cetak'] = 'pendaftaran/cetak';
 $route['cetak/:num'] = 'pendaftaran/cetak';

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Form Wizard | Bootstrap Based Admin Template - Material Design</title>
+    <title>PPDB <?= $this->Config_model->getConfig('nama_sekolah') ?></title>
     <!-- Favicon-->
     <link rel="icon" href="<?php echo base_url(); ?>favicon.ico" type="image/x-icon">
 
@@ -29,7 +29,7 @@
     <link href="<?php echo base_url(); ?>assets/vendors/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Custom Css -->
-    <link href="<?php echo base_url(); ?>assets/build/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/build/css/style.min.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url(); ?>assets/build/css/themes/all-themes.css" rel="stylesheet" />
@@ -73,13 +73,13 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>index.html">PSB SMA DUMMY 1</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>"><?= $this->Config_model->getConfig('nama_sekolah') ?></a>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
+            <!-- <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
     <!-- #Top Bar -->
@@ -87,7 +87,7 @@
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-            <div class="user-info">
+            <!-- <div class="user-info">
                 <div class="image">
                     <img src="<?php echo base_url(); ?>assets/build/img/user.png" width="48" height="48" alt="User" />
                 </div>
@@ -95,37 +95,37 @@
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SMA DUMMY 1</div>
                     <div class="email">Semarang, Jawa Tengah</div>
                 </div>
-            </div>
+            </div> -->
             <!-- #User Info -->
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
                     <li class="header">MENU</li>
-                    <li>
-                        <a href="<?php echo site_url('pendaftaran'); ?>">
+                    <li class="<?= $this->uri->segment(1) === 'pendaftaran' ? "active" : ""; ?>">
+                        <a href="<?php echo base_url() . 'pendaftaran'; ?>">
                             <i class="material-icons">home</i>
                             <span>PENDAFTARAN</span>
                         </a>
                     </li>
+                    <?php if (!$this->session->userdata('masuk')) {
+                        $url = 'login';
+                        $action = 'LOGIN';
+                    } else {
+                        $url = 'logout';
+                        $action = 'LOGOUT';
+                        $active = $this->uri->segment(1) == 'cetak' ? 'active' : '';
+                        echo "<li class='$active'>
+                            <a href='" . base_url() . "cetak'>
+                                <i class='material-icons'>local_printshop</i>
+                                <span>CETAK KARTU</span>
+                            </a>
+                        </li>";
+                    }
+                    ?>
                     <li>
-                        <a href="<?php echo site_url('cetak'); ?>">
-                            <i class="material-icons">text_fields</i>
-                            <span>CETAK KARTU</span>
-                        </a>
-                    </li>
-                    <?php if ( ! $this->session->userdata('masuk'))
-                            {
-                                $url = 'login';
-                                $name = 'LOGIN';
-                            }else {
-                                $url = 'logout';
-                                $name = 'LOGOUT';
-                            }
-                     ?>
-                    <li>
-                        <a href="<?php echo site_url($url); ?>">
-                            <i class="material-icons">layers</i>
-                            <span><?php echo $name; ?></span>
+                        <a href="<?php echo base_url() . $url; ?>">
+                            <i class="material-icons">exit_to_app</i>
+                            <span><?php echo $action; ?></span>
                         </a>
                     </li>
                 </ul>
@@ -134,7 +134,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2018 <a href="javascript:void(0);">SMA DUMMY 1</a>.
+                    &copy; <?= date('Y') ?> <a href="javascript:void(0);"><?= $this->Config_model->getConfig('nama_sekolah') ?></a>
                 </div>
                 <!-- <div class="version">
                     <b>by: </b> <a href="https://neticx.github.io">@Neticx</a>

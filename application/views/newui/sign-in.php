@@ -29,11 +29,11 @@
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">ADMIN</a>
-            <small>SMA DUMMY 1</small>
+            <small><?= $this->Config_model->getConfig('nama_sekolah') ?></small>
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" action="<?php echo site_url('auth') ?>" method="POST">
+                <form id="sign_in" action="<?php echo base_url() . 'login' ?>" method="POST">
                     <div class="msg">Masuk ke halaman admin</div>
                     <div class="input-group">
                         <span class="input-group-addon">

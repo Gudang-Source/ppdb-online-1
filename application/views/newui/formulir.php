@@ -2,11 +2,11 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    SMA DUMMY 1
-                    <small>Tahun Ajaran 2018/2019</small>
+                    <?= $this->Config_model->getConfig('nama_sekolah') ?>
+                    <small>Tahun Ajaran <?= $this->Config_model->getConfig('tahun_ajaran') ?></small>
                 </h2>
             </div>
-            
+
             <!-- Advanced Form Example With Validation -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -19,21 +19,21 @@
                             <form id="wizard_with_validation" action="<?php echo site_url('pendaftaran/insert') ?>" method="POST" enctype="multipart/form-data">
                                 <h3>Data Siswa</h3>
                                 <fieldset>
-                                <!-- nama -->
+                                    <!-- nama -->
                                     <div class="row clearfix">
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
-                                             <div class="form-line">
-                                                   <input type="text" name="name" class="form-control" required>
-                                                   <label class="form-label">Nama Lengkap*</label>
+                                                <div class="form-line">
+                                                    <input type="text" name="name" class="form-control" required>
+                                                    <label class="form-label">Nama Lengkap*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="surname" class="form-control" required>
-                                                   <label class="form-label">Nama Panggilan*</label>
+                                                    <input type="text" name="surname" class="form-control" required>
+                                                    <label class="form-label">Nama Panggilan*</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -68,16 +68,16 @@
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="ttl" class="form-control" required>
-                                                   <label class="form-label">Tempat Tanggal Lahir*</label>
+                                                    <input type="text" name="ttl" class="form-control" required>
+                                                    <label class="form-label">Tempat Tanggal Lahir*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="sekolah" class="form-control" required>
-                                                   <label class="form-label">Sekolah Asal*</label>
+                                                    <input type="text" name="sekolah" class="form-control" required>
+                                                    <label class="form-label">Sekolah Asal*</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -87,32 +87,32 @@
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" id="ijazah" class="form-control" name="ijazah">
-                                                   <label class="form-label">Nomor Ijazah</label>
+                                                    <input type="text" id="ijazah" class="form-control" name="ijazah">
+                                                    <label class="form-label">Nomor Ijazah</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" id="nik" name="nik" class="form-control" required>
-                                                   <label class="form-label">NIK*</label>
+                                                    <input type="text" id="nik" name="nik" class="form-control" required>
+                                                    <label class="form-label">NIK*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" id="nisn" name="nisn" class="form-control" required>
-                                                   <label class="form-label">NISN*</label>
+                                                    <input type="text" id="nisn" name="nisn" class="form-control" required>
+                                                    <label class="form-label">NISN*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" id="skhun" name="skhun" class="form-control" >
-                                                   <label class="form-label">SKHUN</label>
+                                                    <input type="text" id="skhun" name="skhun" class="form-control">
+                                                    <label class="form-label">SKHUN</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,32 +130,32 @@
                                         <div class="col-md-2">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="number" name="anak_ke" class="form-control">
-                                                   <label class="form-label">Anak Ke</label>
+                                                    <input type="number" name="anak_ke" class="form-control">
+                                                    <label class="form-label">Anak Ke</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="number" name="kandung" class="form-control">
-                                                   <label class="form-label">Saudara Kandung</label>
+                                                    <input type="number" name="kandung" class="form-control">
+                                                    <label class="form-label">Saudara Kandung</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="number" name="tiri" class="form-control">
-                                                   <label class="form-label">Saudara Tiri</label>
+                                                    <input type="number" name="tiri" class="form-control">
+                                                    <label class="form-label">Saudara Tiri</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="number" name="angkat" class="form-control">
-                                                   <label class="form-label">Saudara Angkat</label>
+                                                    <input type="number" name="angkat" class="form-control">
+                                                    <label class="form-label">Saudara Angkat</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,24 +164,24 @@
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="bahasa" class="form-control" required>
-                                                   <label class="form-label">Bahasa Sehari-hari*</label>
+                                                    <input type="text" name="bahasa" class="form-control" required>
+                                                    <label class="form-label">Bahasa Sehari-hari*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="number" name="berat" class="form-control">
-                                                   <label class="form-label">Berat Badan</label>
+                                                    <input type="number" name="berat" class="form-control">
+                                                    <label class="form-label">Berat Badan</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="number" name="tinggi" class="form-control">
-                                                   <label class="form-label">Tinggi Badan</label>
+                                                    <input type="number" name="tinggi" class="form-control">
+                                                    <label class="form-label">Tinggi Badan</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -204,7 +204,7 @@
                                             <label class="form-label">Penyakit Yang Pernah Diderita</label>
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="penyakit" class="form-control" data-role="tagsinput" placeholder="pisahkan dengan koma(,)">
+                                                    <input type="text" name="penyakit" class="form-control" data-role="tagsinput" placeholder="pisahkan dengan koma(,)">
                                                 </div>
                                             </div>
                                         </div>
@@ -224,7 +224,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamat" class="form-control" required>
+                                                    <input type="text" name="alamat" class="form-control" required>
                                                     <label class="form-label">Alamat Lengkap*</label>
                                                 </div>
                                             </div>
@@ -232,7 +232,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="kodepos" class="form-control">
+                                                    <input type="text" name="kodepos" class="form-control">
                                                     <label class="form-label">Kode Pos</label>
                                                 </div>
                                             </div>
@@ -240,7 +240,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="handphone" class="form-control">
+                                                    <input type="text" name="handphone" class="form-control">
                                                     <label class="form-label">Telephone/Handphone</label>
                                                 </div>
                                             </div>
@@ -258,16 +258,16 @@
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="namaayah" class="form-control" required>
-                                                   <label class="form-label">Nama Lengkap*</label>
+                                                    <input type="text" name="namaayah" class="form-control" required>
+                                                    <label class="form-label">Nama Lengkap*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="ttlayah" class="form-control" required>
-                                                   <label class="form-label">Tempat Tanggal Lahir*</label>
+                                                    <input type="text" name="ttlayah" class="form-control" required>
+                                                    <label class="form-label">Tempat Tanggal Lahir*</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -369,24 +369,24 @@
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamatrumah" class="form-control" required>
-                                                   <label class="form-label">Alamat Rumah*</label>
+                                                    <input type="text" name="alamatrumah" class="form-control" required>
+                                                    <label class="form-label">Alamat Rumah*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamatkantorayah" class="form-control" >
-                                                   <label class="form-label">Alamat Kantor</label>
+                                                    <input type="text" name="alamatkantorayah" class="form-control">
+                                                    <label class="form-label">Alamat Kantor</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="organisasiayah" class="form-control" >
-                                                   <label class="form-label">Pengalaman Organisasi</label>
+                                                    <input type="text" name="organisasiayah" class="form-control">
+                                                    <label class="form-label">Pengalaman Organisasi</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -399,16 +399,16 @@
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="namaibu" class="form-control" required>
-                                                   <label class="form-label">Nama Lengkap*</label>
+                                                    <input type="text" name="namaibu" class="form-control" required>
+                                                    <label class="form-label">Nama Lengkap*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="ttlibu" class="form-control" required>
-                                                   <label class="form-label">Tempat Tanggal Lahir*</label>
+                                                    <input type="text" name="ttlibu" class="form-control" required>
+                                                    <label class="form-label">Tempat Tanggal Lahir*</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -510,24 +510,24 @@
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamatrumahibu" class="form-control" >
-                                                   <label class="form-label">Alamat Rumah</label>
+                                                    <input type="text" name="alamatrumahibu" class="form-control">
+                                                    <label class="form-label">Alamat Rumah</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamatkantoribu" class="form-control" >
-                                                   <label class="form-label">Alamat Kantor</label>
+                                                    <input type="text" name="alamatkantoribu" class="form-control">
+                                                    <label class="form-label">Alamat Kantor</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="organisasiibu" class="form-control" >
-                                                   <label class="form-label">Pengalaman Organisasi</label>
+                                                    <input type="text" name="organisasiibu" class="form-control">
+                                                    <label class="form-label">Pengalaman Organisasi</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -540,16 +540,16 @@
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="namawali" class="form-control" required>
-                                                   <label class="form-label">Nama Lengkap*</label>
+                                                    <input type="text" name="namawali" class="form-control" required>
+                                                    <label class="form-label">Nama Lengkap*</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="ttlwali" class="form-control" required>
-                                                   <label class="form-label">Tempat Tanggal Lahir*</label>
+                                                    <input type="text" name="ttlwali" class="form-control" required>
+                                                    <label class="form-label">Tempat Tanggal Lahir*</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -605,9 +605,9 @@
                                         <div class="col-md-4">
                                             <label>Pekerjaan *</label>
                                             <div class="demo-radio-button">
-                                                <input name="pekerjaanwali" type="radio" id="pekerjaanwali1" class="with-gap radio-col-green" value="Petani/Beternak" checked/>
+                                                <input name="pekerjaanwali" type="radio" id="pekerjaanwali1" class="with-gap radio-col-green" value="Petani/Beternak" checked />
                                                 <label for="pekerjaanwali1">Petani/Beternak</label>
-                                                <input name="pekerjaanwali" type="radio" id="pekerjaanwali6" class="with-gap radio-col-green" value="Ibu Rumah Tangga"  />
+                                                <input name="pekerjaanwali" type="radio" id="pekerjaanwali6" class="with-gap radio-col-green" value="Ibu Rumah Tangga" />
                                                 <label for="pekerjaanwali6">Ibu Rumah Tangga</label>
                                                 <input name="pekerjaanwali" type="radio" id="pekerjaanwali2" class="with-gap radio-col-green" value="PNS" />
                                                 <label for="pekerjaanwali2">PNS</label>
@@ -651,24 +651,24 @@
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamatrumahwali" class="form-control" >
-                                                   <label class="form-label">Alamat Rumah</label>
+                                                    <input type="text" name="alamatrumahwali" class="form-control">
+                                                    <label class="form-label">Alamat Rumah</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamatkantorwali" class="form-control" >
-                                                   <label class="form-label">Alamat Kantor</label>
+                                                    <input type="text" name="alamatkantorwali" class="form-control">
+                                                    <label class="form-label">Alamat Kantor</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="organisasiwali" class="form-control" >
-                                                   <label class="form-label">Pengalaman Organisasi</label>
+                                                    <input type="text" name="organisasiwali" class="form-control">
+                                                    <label class="form-label">Pengalaman Organisasi</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -677,7 +677,7 @@
 
                                 <h3>Tentang Siswa</h3>
                                 <fieldset>
-                                    <div class="row clearfix">
+                                    <!-- <div class="row clearfix">
                                         <div class="col-md-6">
                                             <label>Pelasanaan Sholat 5 Waktu *</label>
                                             <div class="demo-radio-button">
@@ -700,29 +700,29 @@
                                                 <label for="quran3">Lancar</label>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="row clearfix">
+                                        <!-- <div class="col-md-4">
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input type="text" name="surat" class="form-control">
+                                                    <label class="form-label">Surat Yang Di Hafal</label>
+                                                </div>
+                                            </div>
+                                        </div> -->
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="surat" class="form-control" >
-                                                   <label class="form-label">Surat Yang Di Hafal</label>
+                                                    <input type="text" name="hobi" class="form-control">
+                                                    <label class="form-label">Hobi/Kesukaan Anak</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="hobi" class="form-control" >
-                                                   <label class="form-label">Hobi/Kesukaan Anak</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group form-float">
-                                                <div class="form-line">
-                                                   <input type="text" name="prestasi" class="form-control" >
-                                                   <label class="form-label">Prestasi yang pernah di raih</label>
+                                                    <input type="text" name="prestasi" class="form-control">
+                                                    <label class="form-label">Prestasi yang pernah di raih</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -731,16 +731,16 @@
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="sifat" class="form-control" >
-                                                   <label class="form-label">Karakteristik/Sifat yang perlu di perhatikan</label>
+                                                    <input type="text" name="sifat" class="form-control">
+                                                    <label class="form-label">Karakteristik/Sifat yang perlu di perhatikan</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="penyakitkeras" class="form-control" >
-                                                   <label class="form-label">Penyakit keras/kecelakaan yang pernah diderita</label>
+                                                    <input type="text" name="penyakitkeras" class="form-control">
+                                                    <label class="form-label">Penyakit keras/kecelakaan yang pernah diderita</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -756,26 +756,26 @@
                                 <h3>Pernyataan</h3>
                                 <fieldset>
                                     <div class="row clearfix">
-                                    <center>
-                                        <h4>DATA INFORMASI SURAT PERNYATAAN PELIMPAHAN PENDIDIKAN</h4>
-                                        <h4>DAN KESEDIAAN DANA ORANG TUA/WALI CALON SISWA</h4>
-                                        <h4>TAHUN PELAJARAN 2018/2019</h4>
-                                    </center>
+                                        <center>
+                                            <h4>DATA INFORMASI SURAT PERNYATAAN PELIMPAHAN PENDIDIKAN</h4>
+                                            <h4>DAN KESEDIAAN DANA ORANG TUA/WALI CALON SISWA</h4>
+                                            <h4>TAHUN AJARAN <?= $this->Config_model->getConfig('tahun_ajaran') ?></h4>
+                                        </center>
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="namapernyataan" class="form-control" >
-                                                   <label class="form-label">Nama Orang Tua/Wali</label>
+                                                    <input type="text" name="namapernyataan" class="form-control">
+                                                    <label class="form-label">Nama Orang Tua/Wali</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="alamatpernyataan" class="form-control" >
-                                                   <label class="form-label">Alamat</label>
+                                                    <input type="text" name="alamatpernyataan" class="form-control">
+                                                    <label class="form-label">Alamat</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -784,54 +784,56 @@
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="teleponpernyataan" class="form-control" >
-                                                   <label class="form-label">Nomor Telepon/Handphone</label>
+                                                    <input type="text" name="teleponpernyataan" class="form-control">
+                                                    <label class="form-label">Nomor Telepon/Handphone</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                   <input type="text" name="ortupernyataan" class="form-control" >
-                                                   <label class="form-label">Orang Tua/Wali dari</label>
+                                                    <input type="text" name="ortupernyataan" class="form-control">
+                                                    <label class="form-label">Orang Tua/Wali dari</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- <div class="row clearfix"> -->
-                                        <p>Dengan ikhlas menginfaqan dana pendidikan kepada Pesanren Tahdizul Qur'am Al Azzam SMP IT Bina Insani :</p>
-                                        <ol>
-                                          <li>Paket Pendidikan</li><span class="glyphicon glyphicon-check"> Rp. 1.700.00</span> <br>
-                                          <li>Bahan Seragam santri ( 4 stel )</li><span class="glyphicon glyphicon-check"> Rp. 900.000</span> <br>
-                                          <li>Perkap Asrama</li><span class="glyphicon glyphicon-check"> Rp. 3.000.000</span> <br>
-                                          <li>Wakaf Pembangunan</li><span class="glyphicon glyphicon-check"> Rp. 4.000.000</span> <br>
-                                          <li>Uang Syariah Bulan Juli</li><span class="glyphicon glyphicon-check"> Rp. 975.000</span> <br> <br> <br>
-                                          <strong><ul>Jumlah Total</ul><span class="glyphicon glyphicon-flag"> Rp. 10.575.000</span></strong>
-                                        </ol>
-                                        <h3><strong>CATATAN :</strong></h3>
-                                        <ul type="A">
+                                    <!-- <p>Dengan ikhlas menginfaqan dana pendidikan kepada Pesanren Tahdizul Qur'am Al Azzam SMP IT Bina Insani :</p>
+                                    <ol>
+                                        <li>Paket Pendidikan</li><span class="glyphicon glyphicon-check"> Rp. 1.700.00</span> <br>
+                                        <li>Bahan Seragam santri ( 4 stel )</li><span class="glyphicon glyphicon-check"> Rp. 900.000</span> <br>
+                                        <li>Perkap Asrama</li><span class="glyphicon glyphicon-check"> Rp. 3.000.000</span> <br>
+                                        <li>Wakaf Pembangunan</li><span class="glyphicon glyphicon-check"> Rp. 4.000.000</span> <br>
+                                        <li>Uang Syariah Bulan Juli</li><span class="glyphicon glyphicon-check"> Rp. 975.000</span> <br> <br> <br>
+                                        <strong>
+                                            <ul>Jumlah Total</ul><span class="glyphicon glyphicon-flag"> Rp. 10.575.000</span>
+                                        </strong>
+                                    </ol>
+                                    <h3><strong>CATATAN :</strong></h3>
+                                    <ul type="A">
                                         <li>Penyelesaian Kesediaan Dana Pendidikan tersebut di atas dengan ketentuan sebagai berikut :
-                                          <ul style="list-style-type:none">
-                                            <li>
-                                              Pembayaran pertama saat daftar ulang menyelesaikan:
-                                           <ol type="a">
-                                            <li> 50% Paket Pendidikan</li>
-                                            <li> 100% Biaya Seragam</li>
-                                            <li> 100% Perkap Agama</li>
-                                            <li>50% Wakaf Pembangunan</li>
-                                            <li>100% Uang Syahriah bulan juli</li>
-                                          </ol>
-                                            </li>
-                                          </ul>
+                                            <ul style="list-style-type:none">
+                                                <li>
+                                                    Pembayaran pertama saat daftar ulang menyelesaikan:
+                                                    <ol type="a">
+                                                        <li> 50% Paket Pendidikan</li>
+                                                        <li> 100% Biaya Seragam</li>
+                                                        <li> 100% Perkap Agama</li>
+                                                        <li>50% Wakaf Pembangunan</li>
+                                                        <li>100% Uang Syahriah bulan juli</li>
+                                                    </ol>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li>Selaku Orang Tua/Wali siswa tersebut dengan sungguh-sungguh dan penuh kesadaran kami menyatakan bahwa :
-                                        <ol>
-                                          <li>Menyerahkan sepenuhnya pendidikan calon siswa kepada pihak sekolah.</li>
-                                          <li>Bersedia membimbing dan mengawasi calon siswa tersebut di lingkungan dan masyarakat.</li>
-                                          <li>Apabila terjadi pengunduran diri pada putra/putri kami, maka 50% biaya administrasi yang sudah kami infaqkan kepada SMP IT Bina Insani.</li>
-                                        </ol>
+                                            <ol>
+                                                <li>Menyerahkan sepenuhnya pendidikan calon siswa kepada pihak sekolah.</li>
+                                                <li>Bersedia membimbing dan mengawasi calon siswa tersebut di lingkungan dan masyarakat.</li>
+                                                <li>Apabila terjadi pengunduran diri pada putra/putri kami, maka 50% biaya administrasi yang sudah kami infaqkan kepada SMP IT Bina Insani.</li>
+                                            </ol>
                                         </li>
-                                        </ul>
+                                    </ul> -->
                                     <!-- </div> -->
                                     <div class="row clearfix">
                                         <div class="col-md-12">
