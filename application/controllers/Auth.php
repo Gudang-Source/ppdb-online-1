@@ -6,14 +6,10 @@
  */
 class Auth extends CI_Controller
 {
-
-
-
 	public function logged_in_check()
 	{
-		// dd($this->session->userdata());
 		if ($this->session->userdata("masuk")) {
-			redirect(base_url() . 'admin');
+			redirect('cetak');
 		}
 	}
 
@@ -38,18 +34,12 @@ class Auth extends CI_Controller
 				$username = $this->input->post('username');
 
 				$this->load->model('Auth_model');
-				// $active = $this->auth_model->chec_active($username);
-				// if ($active == 1) {
-				// success
 				// store the user data to session
-				$this->session->set_userdata($this->auth->get_data());
-				$this->session->set_userdata("masuk", true);
+				$user = $this->auth->get_data();
+				$user['masuk'] = TRUE;
+				$this->session->set_userdata('user', $user);
 				// redirect to dashboard
-				redirect("Admin_site");
-				// }else {
-				// 	$this->session->set_flashdata("error", "Konfirmasi Email anda terlebih dahulu..!");
-				// }
-
+				redirect("cetak");
 			}
 		}
 

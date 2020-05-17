@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -26,13 +26,20 @@
     <!-- Sweet Alert Css -->
     <link href="<?php echo base_url(); ?>assets/vendors/sweetalert/sweetalert.css" rel="stylesheet" />
     <!-- JQuery DataTable Css -->
-    <link href="<?php echo base_url(); ?>assets/vendors/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendors/jquery-datatable/datatables.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Css -->
     <link href="<?php echo base_url(); ?>assets/build/css/style.min.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url(); ?>assets/build/css/themes/all-themes.css" rel="stylesheet" />
+    <!-- <link href="<?php echo base_url(); ?>assets/build/css/materialize.min.css" rel="stylesheet" /> -->
+    <link href="<?php echo base_url(); ?>assets/build/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <!-- Jquery Core Js -->
+    <script src="<?php echo base_url(); ?>assets/vendors/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/build/js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="assets/build/js/bootstrap-datepicker.min.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/build/js/materialize.min.js"></script> -->
 </head>
 
 <body class="theme-red">
@@ -107,21 +114,22 @@
                             <span>PENDAFTARAN</span>
                         </a>
                     </li>
-                    <?php if (!$this->session->userdata('masuk')) {
+                    <?php
+                    $active = $this->uri->segment(1) == 'cetak' || $this->uri->segment(1) == 'Admin_site' ? 'active' : '';
+                    if (!$this->session->userdata('masuk')) {
                         $url = 'login';
                         $action = 'LOGIN';
                     } else {
                         $url = 'logout';
                         $action = 'LOGOUT';
-                        $active = $this->uri->segment(1) == 'cetak' ? 'active' : '';
-                        echo "<li class='$active'>
-                            <a href='" . base_url() . "cetak'>
-                                <i class='material-icons'>local_printshop</i>
-                                <span>CETAK KARTU</span>
-                            </a>
-                        </li>";
                     }
                     ?>
+                    <li class='<?= $active ?>'>
+                        <a href='<?= base_url() . "cetak" ?>'>
+                            <i class='material-icons'>local_printshop</i>
+                            <span>CETAK KARTU</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="<?php echo base_url() . $url; ?>">
                             <i class="material-icons">exit_to_app</i>

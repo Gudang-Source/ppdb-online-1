@@ -1,97 +1,101 @@
+<style>
+    th,
+    td {
+        white-space: nowrap;
+    }
+</style>
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>
+                <?= $this->Config_model->getConfig('nama_sekolah') ?>
+                <small>Tahun Ajaran <?= $this->Config_model->getConfig('tahun_ajaran') ?></small>
+            </h2>
+        </div>
 
-    <section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <h2>
-                    SMA DUMMY 1
-                    <small>Tahun Ajaran 2018/2019</a></small>
-                </h2>
-            </div>
-            
-            <!-- Exportable Table -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                CETAK FORMULIR
-                            </h2>
-                            <span>Silahkan cari nama calon siswa di kolom search</span>
+        <!-- Exportable Table -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            CETAK FORMULIR
+                        </h2>
+                        <p>Silahkan cari nama calon siswa di kolom search</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border:1px solid #eeeeee;border-radius:.4rem;margin-top:1rem;" type="text" id="search" name="search" class="form-control" placeholder="Cari Nik atau NISN">
                         </div>
-                        <div class="body">
-                            <table class="table table-bordered table-striped table-hover dataTable">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Tahun</th>
-                                        <th>TTL</th>
-                                        <th>Alamat</th>
-                                        <th>Asal Sekolah</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Tahun</th>
-                                        <th>TTL</th>
-                                        <th>Alamat</th>
-                                        <th>Asal Sekolah</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                <?php foreach ($all as $value => $key):?>
-                                    <tr>
-                                        <td><?php echo $key->id_siswa;  ?></td>
-                                        <td><?php echo $key->nl_siswa;  ?></td>
-                                        <td><?php echo $key->tahun;  ?></td>
-                                        <td><?php echo $key->ttl;  ?></td>
-                                        <td><?php echo $key->alamat;  ?></td>
-                                        <td><?php echo $key->asal_sekolah;  ?></td>
-                                        <td>
-                                            <a class="btn bg-green waves-effect" data-toggle="modal" data-target="#myModal<?php echo $key->id_siswa; ?>">
-                                                <i class="material-icons">print</i>Cetak
-                                            </a>
-                                            <!-- Modal -->
-                                            <div id="myModal<?php echo $key->id_siswa; ?>" class="modal fade" role="dialog">
-                                              <div class="modal-dialog">
-
-                                                <!-- Modal content-->
-                                                <div class="modal-content modal-col-green">
-                                                <form action="<?php echo site_url('pendaftaran/cek_valid/'.$key->id_siswa); ?>" method="POST">
-                                                  <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Kode Cetak</h4>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    <p>Silahkan Masukan Kode 8 digit untuk mencetak formulir.</p><span>Belum punya kode? hubungi admin.</span><br>
-                                                    <div class="form-group form-group-lg">
-                                                        <div class="form-line">
-                                                           <input type="text" name="kode" class="form-control" placeholder="Masukkan Kode Disini" minlength="8" maxlength="8" required>
-                                                        </div>
-                                                    </div>
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary" >Cetak</button>
-                                                    <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                  </div>
-                                                  </form>
-                                                </div>
-
-                                              </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <button class="btn btn-primary" style="margin-top:1rem;">Cari</button>
                         </div>
+                    </div>
+                    <div class="body">
+                        <table id="table-cetak" class="table table-bordered table-striped table-hover dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>NIK</th>
+                                    <th>NISN</th>
+                                    <th>Tahun</th>
+                                    <th>TTL</th>
+                                    <th>Alamat</th>
+                                    <th>Asal Sekolah</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <!-- #END# Exportable Table -->
         </div>
-    </section>
+        <!-- #END# Exportable Table -->
+    </div>
+</section>
+<script>
+    $(document).ready(function() {
+        $('#table-cetak').DataTable({
+            "ajax": "<?= base_url() . 'data_siswa' ?>",
+            <?= !$this->session->userdata('masuk') ?  '"searching": false' : '' ?>,
+            "bLengthChange": false,
+            "scrollX": true,
+            "columns": [{
+                    "data": "nl_siswa"
+                },
+                {
+                    "data": "nik"
+                },
+                {
+                    "data": "nisn"
+                },
+                {
+                    "data": "tahun"
+                },
+                {
+                    "data": "ttl"
+                },
+                {
+                    "data": "alamat"
+                },
+                {
+                    "data": "asal_sekolah"
+                },
+                {
+                    "data": "alamat",
+                    render: function(data, type, row) {
+                        return `<button onclick="printCalonSiswa('${row.id_siswa}')" class="waves-effect waves-light btn btn-primary btn-xs" type="button"><i class="material-icons left">local_printshop</i> Cetak</button>`
+                    }
+                }
+            ]
+        });
+    });
+
+    function printCalonSiswa(id) {
+        window.open('<?= base_url() . 'export/' ?>' + id);
+    }
+</script>

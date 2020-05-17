@@ -55,7 +55,11 @@ $route['pendaftaran'] = 'pendaftaran/newForm';
 $route['admin'] = 'admin_site/index';
 $route['logout'] = 'auth/logout';
 $route['cetak'] = 'pendaftaran/cetak';
-$route['cetak/:num'] = 'pendaftaran/cetak';
-$route['delete/:num'] = 'admin_site/delete';
+$route['cetak/(:num)'] = 'pendaftaran/cetak';
+$route['delete/(:num)'] = 'admin_site/delete';
+$route['export/(:any)'] = 'pendaftaran/exportExcel/$1';
+$route['export'] = 'pendaftaran/exportExcel';
+$route['data_siswa'] = 'pendaftaran/getData';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -56,20 +56,32 @@
                                                 <label for="agama1">Islam</label>
                                                 <input name="agama" type="radio" id="agama2" class="with-gap radio-col-green" value="Kristen" />
                                                 <label for="agama2">Kristen</label>
+                                                <input name="agama" type="radio" id="agama5" class="with-gap radio-col-green" value="Katolik" />
+                                                <label for="agama5">Katolik</label>
                                                 <input name="agama" type="radio" id="agama3" class="with-gap radio-col-green" value="Hindu" />
                                                 <label for="agama3">Hindu</label>
                                                 <input name="agama" type="radio" id="agama4" class="with-gap radio-col-green" value="Budha" />
                                                 <label for="agama4">Budha</label>
+                                                <input name="agama" type="radio" id="agama6" class="with-gap radio-col-green" value="Kong Hu Cu" />
+                                                <label for="agama6">Kong Hu Cu</label>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- ttl&sekolah -->
                                     <div class="row clearfix">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
                                                     <input type="text" name="ttl" class="form-control" required>
-                                                    <label class="form-label">Tempat Tanggal Lahir*</label>
+                                                    <label class="form-label">Tempat Lahir*</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input type="date" name="tanggal-lahir" class="form-control datepicker" id="tanggal-lahir" required>
+                                                    <label class="form-label">Tanggal Lahir*</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,8 +176,8 @@
                                         <div class="col-md-3">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                    <input type="text" name="bahasa" class="form-control" required>
-                                                    <label class="form-label">Bahasa Sehari-hari*</label>
+                                                    <input type="text" name="bahasa" class="form-control">
+                                                    <label class="form-label">Bahasa Sehari-hari</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -186,15 +198,17 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
-                                            <label>Golongan Darah *</label>
+                                            <label>Golongan Darah</label>
                                             <div class="demo-radio-button">
-                                                <input name="goldar" type="radio" id="goldar1" class="with-gap radio-col-green" value="A" checked />
+                                                <input name="goldar" type="radio" id="goldar0" class="with-gap radio-col-green" value="-" checked />
+                                                <label for="goldar1">Tidak Tahu</label>
+                                                <input name="goldar" type="radio" id="goldar1" class="with-gap radio-col-green" value="A" />
                                                 <label for="goldar1">A</label>
-                                                <input name="goldar" value="B" type="radio" id="goldar2" class="with-gap radio-col-pink" />
+                                                <input name="goldar" value="B" type="radio" id="goldar2" class="with-gap radio-col-green" />
                                                 <label for="goldar2">B</label>
                                                 <input name="goldar" type="radio" id="goldar3" class="with-gap radio-col-green" value="AB" />
                                                 <label for="goldar3">AB</label>
-                                                <input name="goldar" value="O" type="radio" id="goldar4" class="with-gap radio-col-pink" />
+                                                <input name="goldar" value="O" type="radio" id="goldar4" class="with-gap radio-col-green" />
                                                 <label for="goldar4">O</label>
                                             </div>
                                         </div>
@@ -211,9 +225,9 @@
                                         <div class="col-md-6">
                                             <label>Bertempat Tinggal Pada </label>
                                             <div class="demo-radio-button">
-                                                <input name="tinggal" type="radio" id="tinggal1" class="with-gap radio-col-green" value="Orang Tua" />
+                                                <input name="tinggal" type="radio" id="tinggal1" class="with-gap radio-col-green" value="Orang Tua" checked />
                                                 <label for="tinggal1">Orang Tua</label>
-                                                <input name="tinggal" value="Menumpang" type="radio" id="tinggal2" class="with-gap radio-col-pink" />
+                                                <input name="tinggal" value="Menumpang" type="radio" id="tinggal2" class="with-gap radio-col-green" />
                                                 <label for="tinggal2">Menumpang</label>
                                                 <input name="tinggal" type="radio" id="tinggal3" class="with-gap radio-col-green" value="Asrama" />
                                                 <label for="tinggal3">Asrama</label>
@@ -248,7 +262,7 @@
                                     </div>
                                 </fieldset>
 
-                                <h3>Data Orang Tua&Wali</h3>
+                                <h3>Data Orang Tua & Wali</h3>
                                 <fieldset>
                                     <!-- nama ayah-->
                                     <div class="row clearfix">
@@ -258,15 +272,15 @@
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                    <input type="text" name="namaayah" class="form-control" required>
-                                                    <label class="form-label">Nama Lengkap*</label>
+                                                    <input type="text" name="namaayah" class="form-control">
+                                                    <label class="form-label">Nama Lengkap</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-md-6">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                    <input type="text" name="ttlayah" class="form-control" required>
+                                                    <input type="text" name="ttlayah" class="form-control">
                                                     <label class="form-label">Tempat Tanggal Lahir*</label>
                                                 </div>
                                             </div>
@@ -274,20 +288,24 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-md-6">
-                                            <label>Agama *</label>
+                                            <label>Agama</label>
                                             <div class="demo-radio-button">
                                                 <input name="agamaayah" type="radio" id="agamaayah1" class="with-gap radio-col-green" value="Islam" checked />
                                                 <label for="agamaayah1">Islam</label>
                                                 <input name="agamaayah" type="radio" id="agamaayah2" class="with-gap radio-col-green" value="Kristen" />
                                                 <label for="agamaayah2">Kristen</label>
+                                                <input name="agamaayah" type="radio" id="agamaayah4" class="with-gap radio-col-green" value="Katolik" />
+                                                <label for="agamaayah5">Katolik</label>
                                                 <input name="agamaayah" type="radio" id="agamaayah3" class="with-gap radio-col-green" value="Hindu" />
                                                 <label for="agamaayah3">Hindu</label>
                                                 <input name="agamaayah" type="radio" id="agamaayah4" class="with-gap radio-col-green" value="Budha" />
                                                 <label for="agamaayah4">Budha</label>
+                                                <input name="agamaayah" type="radio" id="agamaayah4" class="with-gap radio-col-green" value="Kong Hu Cu" />
+                                                <label for="agamaayah6">Kong Hu Cu</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label>Kewarganegaraan *</label>
+                                            <label>Kewarganegaraan</label>
                                             <div class="demo-radio-button">
                                                 <input name="kewarganegaraanayah" type="radio" id="kewarganegaraanayah1" class="with-gap radio-col-green" value="Warga Negara Indonesia(WNI)" checked />
                                                 <label for="kewarganegaraanayah1">Warga Negara Indonesia(WNI)</label>
@@ -298,7 +316,7 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-md-4">
-                                            <label>Pendidikan *</label>
+                                            <label>Pendidikan</label>
                                             <div class="demo-radio-button">
                                                 <input name="pendidikanayah" type="radio" id="pendidikanayah1" class="with-gap radio-col-green" value="SD" checked />
                                                 <label for="pendidikanayah1">SD</label>
@@ -321,7 +339,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Pekerjaan *</label>
+                                            <label>Pekerjaan</label>
                                             <div class="demo-radio-button">
                                                 <input name="pekerjaanayah" type="radio" id="pekerjaanayah1" class="with-gap radio-col-green" value="Petani/Beternak" checked />
                                                 <label for="pekerjaanayah1">Petani/Beternak</label>
@@ -350,9 +368,11 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Penghasilan rata-rata(Perbulan) *</label>
+                                            <label>Penghasilan rata-rata(Perbulan)</label>
                                             <div class="demo-radio-button">
-                                                <input name="penghasilanayah" type="radio" id="penghasilanayah1" class="with-gap radio-col-green" value="Kurang dari Rp. 500.000" checked />
+                                                <input name="penghasilanayah" type="radio" id="penghasilanayah0" class="with-gap radio-col-green" value="-" checked />
+                                                <label for="penghasilanayah0">Tidak Tahu</label>
+                                                <input name="penghasilanayah" type="radio" id="penghasilanayah1" class="with-gap radio-col-green" value="Kurang dari Rp. 500.000" />
                                                 <label for="penghasilanayah1">Kurang dari Rp. 500.000</label>
                                                 <input name="penghasilanayah" type="radio" id="penghasilanayah2" class="with-gap radio-col-green" value="Rp. 500.000 - Rp. 1.000.000" />
                                                 <label for="penghasilanayah2">Rp. 500.000 - Rp. 1.000.000</label>
@@ -370,7 +390,7 @@
                                             <div class="form-group form-float">
                                                 <div class="form-line">
                                                     <input type="text" name="alamatrumah" class="form-control" required>
-                                                    <label class="form-label">Alamat Rumah*</label>
+                                                    <label class="form-label">Alamat Rumah</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -400,7 +420,7 @@
                                             <div class="form-group form-float">
                                                 <div class="form-line">
                                                     <input type="text" name="namaibu" class="form-control" required>
-                                                    <label class="form-label">Nama Lengkap*</label>
+                                                    <label class="form-label">Nama Lengkap</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -415,20 +435,24 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-md-6">
-                                            <label>Agama *</label>
+                                            <label>Agama</label>
                                             <div class="demo-radio-button">
                                                 <input name="agamaibu" type="radio" id="agamaibu1" class="with-gap radio-col-green" value="Islam" checked />
                                                 <label for="agamaibu1">Islam</label>
                                                 <input name="agamaibu" type="radio" id="agamaibu2" class="with-gap radio-col-green" value="Kristen" />
                                                 <label for="agamaibu2">Kristen</label>
+                                                <input name="agamaibu" type="radio" id="agamaibu4" class="with-gap radio-col-green" value="Katolik" />
+                                                <label for="agamaibu5">Katolik</label>
                                                 <input name="agamaibu" type="radio" id="agamaibu3" class="with-gap radio-col-green" value="Hindu" />
                                                 <label for="agamaibu3">Hindu</label>
                                                 <input name="agamaibu" type="radio" id="agamaibu4" class="with-gap radio-col-green" value="Budha" />
                                                 <label for="agamaibu4">Budha</label>
+                                                <input name="agamaibu" type="radio" id="agamaibu6" class="with-gap radio-col-green" value="Kong Hu Cu" />
+                                                <label for="agamaibu6">Kong Hu Cu</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label>Kewarganegaraan *</label>
+                                            <label>Kewarganegaraan</label>
                                             <div class="demo-radio-button">
                                                 <input name="kewarganegaraanibu" type="radio" id="kewarganegaraanibu1" class="with-gap radio-col-green" value="Warga Negara Indonesia(WNI)" checked />
                                                 <label for="kewarganegaraanibu1">Warga Negara Indonesia(WNI)</label>
@@ -439,7 +463,7 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-md-4">
-                                            <label>Pendidikan *</label>
+                                            <label>Pendidikan</label>
                                             <div class="demo-radio-button">
                                                 <input name="pendidikanibu" type="radio" id="pendidikanibu1" class="with-gap radio-col-green" value="SD" checked />
                                                 <label for="pendidikanibu1">SD</label>
@@ -462,7 +486,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Pekerjaan *</label>
+                                            <label>Pekerjaan</label>
                                             <div class="demo-radio-button">
                                                 <input name="pekerjaanibu" type="radio" id="pekerjaanibu6" class="with-gap radio-col-green" value="Ibu Rumah Tangga" checked />
                                                 <label for="pekerjaanibu6">Ibu Rumah Tangga</label>
@@ -491,9 +515,11 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Penghasilan rata-rata(Perbulan) *</label>
+                                            <label>Penghasilan rata-rata(Perbulan)</label>
                                             <div class="demo-radio-button">
-                                                <input name="penghasilanibu" type="radio" id="penghasilanibu1" class="with-gap radio-col-green" value="Kurang dari Rp. 500.000" checked />
+                                                <input name="penghasilanibu" type="radio" id="penghasilanibu0" class="with-gap radio-col-green" value="-" checked />
+                                                <label for="penghasilanibu0">Tidak Tahu</label>
+                                                <input name="penghasilanibu" type="radio" id="penghasilanibu1" class="with-gap radio-col-green" value="Kurang dari Rp. 500.000" />
                                                 <label for="penghasilanibu1">Kurang dari Rp. 500.000</label>
                                                 <input name="penghasilanibu" type="radio" id="penghasilanibu2" class="with-gap radio-col-green" value="Rp. 500.000 - Rp. 1.000.000" />
                                                 <label for="penghasilanibu2">Rp. 500.000 - Rp. 1.000.000</label>
@@ -562,10 +588,14 @@
                                                 <label for="agamawali1">Islam</label>
                                                 <input name="agamawali" type="radio" id="agamawali2" class="with-gap radio-col-green" value="Kristen" />
                                                 <label for="agamawali2">Kristen</label>
+                                                <input name="agamawali" type="radio" id="agamawali5" class="with-gap radio-col-green" value="Katolik" />
+                                                <label for="agamawali5">Katolik</label>
                                                 <input name="agamawali" type="radio" id="agamawali3" class="with-gap radio-col-green" value="Hindu" />
                                                 <label for="agamawali3">Hindu</label>
                                                 <input name="agamawali" type="radio" id="agamawali4" class="with-gap radio-col-green" value="Budha" />
                                                 <label for="agamawali4">Budha</label>
+                                                <input name="agamawali" type="radio" id="agamawali6" class="with-gap radio-col-green" value="Kong Hu Cu" />
+                                                <label for="agamawali6">Kong Hu Cu</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -580,7 +610,7 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-md-4">
-                                            <label>Pendidikan *</label>
+                                            <label>Pendidikan</label>
                                             <div class="demo-radio-button">
                                                 <input name="pendidikanwali" type="radio" id="pendidikanwali1" class="with-gap radio-col-green" value="SD" checked />
                                                 <label for="pendidikanwali1">SD</label>
@@ -603,7 +633,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Pekerjaan *</label>
+                                            <label>Pekerjaan</label>
                                             <div class="demo-radio-button">
                                                 <input name="pekerjaanwali" type="radio" id="pekerjaanwali1" class="with-gap radio-col-green" value="Petani/Beternak" checked />
                                                 <label for="pekerjaanwali1">Petani/Beternak</label>
@@ -632,9 +662,11 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label>Penghasilan rata-rata(Perbulan) *</label>
+                                            <label>Penghasilan rata-rata(Perbulan)</label>
                                             <div class="demo-radio-button">
-                                                <input name="penghasilanwali" type="radio" id="penghasilanwali1" class="with-gap radio-col-green" value="Kurang dari Rp. 500.000" checked />
+                                                <input name="penghasilanwali" type="radio" id="penghasilanwali0" class="with-gap radio-col-green" value="Tidak Tahu" checked />
+                                                <label for="penghasilanwali0">Tidak Tahu</label>
+                                                <input name="penghasilanwali" type="radio" id="penghasilanwali1" class="with-gap radio-col-green" value="Kurang dari Rp. 500.000" />
                                                 <label for="penghasilanwali1">Kurang dari Rp. 500.000</label>
                                                 <input name="penghasilanwali" type="radio" id="penghasilanwali2" class="with-gap radio-col-green" value="Rp. 500.000 - Rp. 1.000.000" />
                                                 <label for="penghasilanwali2">Rp. 500.000 - Rp. 1.000.000</label>
@@ -756,11 +788,11 @@
                                 <h3>Pernyataan</h3>
                                 <fieldset>
                                     <div class="row clearfix">
-                                        <center>
+                                        <div class="text-center">
                                             <h4>DATA INFORMASI SURAT PERNYATAAN PELIMPAHAN PENDIDIKAN</h4>
                                             <h4>DAN KESEDIAAN DANA ORANG TUA/WALI CALON SISWA</h4>
                                             <h4>TAHUN AJARAN <?= $this->Config_model->getConfig('tahun_ajaran') ?></h4>
-                                        </center>
+                                        </div>
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-md-6">
@@ -835,10 +867,17 @@
                                         </li>
                                     </ul> -->
                                     <!-- </div> -->
+                                    <div class="row clearfix"> -->
+                                        <p>Dengan Ini saya menyatakan bahwa:</p>
+                                        <ol>
+                                            <li>Data yang diinput adalah benar</li><span class="glyphicon glyphicon-check"></span> <br>
+                                            <li>Menyetujui ketentuan yang telah dibuat oleh pihak SMAN 1 banyusari</li><span class="glyphicon glyphicon-check"></span> <br>
+                                        </ol>
+                                    </div>
                                     <div class="row clearfix">
                                         <div class="col-md-12">
                                             <input id="accept" name="accept" type="checkbox" required>
-                                            <label for="accept">Saya Setuju.</label>
+                                            <label for="accept">Saya Setuju. *</label>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -850,3 +889,6 @@
             <!-- #END# Advanced Form Example With Validation -->
         </div>
     </section>
+    <script>
+        $('#tanggal-lahir').datepicker({});
+    </script>

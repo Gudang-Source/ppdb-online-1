@@ -64,17 +64,20 @@ class Pendaftaran extends CI_Controller
             // echo 'Please choose a file';
             $nama = 'sample.png';
         }
+
+
         $data = array(
             'nl_siswa' => $this->input->post('name'),
             'np_siswa' => $this->input->post('surname'),
             'jk_siswa' => $this->input->post('kelamin'),
             'ttl' => $this->input->post('ttl'),
+            'tanggal_lahir' => date('Y-m-d', strtotime($this->input->post('tanggal-lahir'))),
             'agama_siswa' => $this->input->post('agama'),
             'asal_sekolah' => $this->input->post('sekolah'),
             'ijazah' => $this->input->post('ijazah'),
-            'nisn' => $this->input->post('nisn'),
-            'nik' => $this->input->post('nik'),
-            'tahun' => date('Y'),
+            'nisn' => str_replace('-', '', $this->input->post('nisn')),
+            'nik' => str_replace('-', '', $this->input->post('nik')),
+            'tahun' => $this->Config_model->getConfig('tahun_ajaran'),
             'skhun' => $this->input->post('skhun'),
             'warga_siswa' => $this->input->post('kewarganegaraan'),
             'anak_ke' => $this->input->post('anak_ke'),
@@ -92,9 +95,10 @@ class Pendaftaran extends CI_Controller
             'tinggal' => $this->input->post('tinggal'),
             'photo' => $nama
         );
+        // dd($data);
         $insert = $this->db->insert('calon_siswa', $data);
         // $ids = $this->db->select('id_siswa')->from('calon_siswa')->where($data)->get()->row()->id_siswa;
-        $id = $this->db->insert_id();
+        // $id = $this->db->insert_id();
         $ayah = array(
             'id_siswa' => $id,
             'nl_ayah' => $this->input->post('namaayah'),
@@ -140,32 +144,35 @@ class Pendaftaran extends CI_Controller
         );
         $this->db->insert('wali_siswa', $wali);
 
-        $mampu = array(
-            'id_siswa' => $id,
-            'sholat' => $this->input->post('sholat'),
-            'hafalan' => $this->input->post('surat'),
-            'bacaan' => $this->input->post('quran'),
-            'hobi' => $this->input->post('hobi'),
-            'prestasi' => $this->input->post('prestasi'),
-            'sifat' => $this->input->post('sifat'),
-            'penyakit_keras' => $this->input->post('penyakitkeras')
-        );
+        // $mampu = array(
+        //     'id_siswa' => $id,
+        //     'sholat' => $this->input->post('sholat'),
+        //     'hafalan' => $this->input->post('surat'),
+        //     'bacaan' => $this->input->post('quran'),
+        //     'hobi' => $this->input->post('hobi'),
+        //     'prestasi' => $this->input->post('prestasi'),
+        //     'sifat' => $this->input->post('sifat'),
+        //     'penyakit_keras' => $this->input->post('penyakitkeras')
+        // );
 
-        $this->db->insert('kemampuan_siswa', $mampu);
+        // $this->db->insert('kemampuan_siswa', $mampu);
 
-        $surat = array(
-            'id_siswa' => $id,
-            'nama_ortu' => $this->input->post('namapernyataan'),
-            'alamat' => $this->input->post('alamatpernyataan'),
-            'handphone' => $this->input->post('teleponpernyataan'),
-            'ortu_dari' => $this->input->post('ortupernyataan')
-        );
-        $this->db->insert('surat', $surat);
+        // $surat = array(
+        //     'id_siswa' => $id,
+        //     'nama_ortu' => $this->input->post('namapernyataan'),
+        //     'alamat' => $this->input->post('alamatpernyataan'),
+        //     'handphone' => $this->input->post('teleponpernyataan'),
+        //     'ortu_dari' => $this->input->post('ortupernyataan')
+        // );
+        // $this->db->insert('surat', $surat);
 
         header('Location: ' . site_url('cetak'));
     }
     public function cetak()
     {
+        // if (!$this->session->userdata('masuk')) {
+        //     redirect('auth');
+        // }
         if (!empty($this->uri->segment(2))) {
             $id = $this->uri->segment(2);
             $siswa = $this->Adm_model->siswa($id);
@@ -180,6 +187,40 @@ class Pendaftaran extends CI_Controller
             $data['all'] = $this->Adm_model->all();
             $this->compileView('newui/cetak', $data);
         }
+    }
+
+    function exportExcel($req = NULL)
+    {
+        // dd($req);
+        if (!$this->session->userdata('masuk')) {
+            if (isset($req)) {
+                $siswa = $this->Adm_model->get_by_id($req, true);
+            } else {
+                $siswa = $this->Adm_model->all();
+            }
+        } else {
+            if (!isset($req)) {
+                die("<script>alert('NISN atan NIK tidak valid');window.close();</script>");
+            }
+            $siswa = $this->Adm_model->get_by_id($req, true);
+        }
+
+        $data['siswa'] = $siswa;
+        isset($req) ? $this->load->view('report/siswa_single', $data) : $this->load->view('report/siswa_all', $data);
+    }
+
+    function getData()
+    {
+        $data = $this->Adm_model->all();
+        $ret = [];
+        $no = 0;
+        foreach ($data as $key => $value) {
+            ++$no;
+            $value['no'] = $no;
+            $value['id_siswa'] = md5($value['id_siswa'] . $this->Config_model->getConfig('salt'));
+            $ret[] = $value;
+        }
+        echo json_encode(['data' => $ret]);
     }
 
     function getPdf($siswa, $ayah, $ibu, $wali, $surat, $kemampuan)

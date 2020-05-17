@@ -1,6 +1,3 @@
-<!-- Jquery Core Js -->
-<script src="<?php echo base_url(); ?>assets/vendors/jquery/jquery.min.js"></script>
-
 <!-- Bootstrap Core Js -->
 <script src="<?php echo base_url(); ?>assets/vendors/bootstrap/js/bootstrap.js"></script>
 
@@ -26,36 +23,36 @@
 <script src="<?php echo base_url(); ?>assets/build/js/admin.js"></script>
 <script src="<?php echo base_url(); ?>assets/build/js/pages/forms/form-wizard.js"></script>
 <!-- Input Mask Plugin Js -->
-<script src="<?php echo base_url(); ?>assets/vendors/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/jquery.inputmask.bundle.min.js"></script>
 <!-- Bootstrap Tags Input Plugin Js -->
-<script src="<?php echo base_url(); ?>assets/vendors/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 <!-- Jquery DataTable Plugin Js -->
-<script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/jquery.dataTables.js"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/datatables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/dataTables.bootstrap.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/jszip.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/pdfmake.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/vfs_fonts.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/jquery-datatable/extensions/export/buttons.print.min.js"></script> -->
 
 <!-- Demo Js -->
 <script src="<?php echo base_url(); ?>assets/build/js/demo.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#ijazah').inputmask('** - ** - ****** - ** - ****', {
-            placeholder: '__ - __ - ______ - __ -____'
+        // $('#ijazah').inputmask('** - ** - ****** - ** - ****', {
+        //     placeholder: '__ - __ - ______ - __ -____'
+        // });
+        $('#nisn').inputmask('***-***-****', {
+            placeholder: '___-___-____'
         });
-        $('#nisn').inputmask('** - ** - ****', {
-            placeholder: '__ - __ -____'
+        $('#nik').inputmask('**-**-**-**-**-**-****', {
+            placeholder: '__-__-__-__-__-__-____'
         });
-        $('#nik').inputmask('** - ** - ****** - ** - ****', {
-            placeholder: '__ - __ - ______ - __ -____'
-        });
-        $('#skhun').inputmask('** - ** - ****** - ** - ****', {
-            placeholder: '__ - __ - ______ - __ -____'
-        });
+        // $('#skhun').inputmask('** - ** - ****** - ** - ****', {
+        //     placeholder: '__ - __ - ______ - __ -____'
+        // });
     });
     $(function() {
         $('.js-basic-example').DataTable();

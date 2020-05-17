@@ -995,11 +995,10 @@
       <!-- jQuery Smart Wizard -->
       <script src="<?= base_url(); ?>assets/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
       <!-- jquery.inputmask -->
-      <script src="<?= base_url(); ?>assets/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+      <script src="<?= base_url(); ?>assets/vendors/jquery.inputmask.bundle.min.js"></script>
       <!-- jQuery Tags Input -->
       <script src="<?= base_url(); ?>assets/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
       <script src="<?= base_url(); ?>assets/vendors/moment/min/moment.min.js"></script>
-      <script src="<?= base_url(); ?>assets/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
       <script src="<?= base_url(); ?>assets/vendors/datepicker/daterangepicker.js"></script>
       <!-- Custom Theme Scripts -->
       <!-- <script src="<?= base_url(); ?>assets/build/js/custom.min.js"></script> -->
