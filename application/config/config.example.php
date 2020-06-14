@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/ebeng/test/PPDB/';
+$config['base_url'] = 'http://bansar.local/PPDB/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/ebeng/test/PPDB/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -137,7 +137,6 @@ $config['subclass_prefix'] = 'MY_';
 |	autoloading (application/config/autoload.php)
 */
 $config['composer_autoload'] = FCPATH . 'vendor/autoload.php';
-
 /*
 |--------------------------------------------------------------------------
 | Allowed URL Characters
@@ -324,7 +323,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'sman1banyusari';
 
 /*
 |--------------------------------------------------------------------------
@@ -400,11 +399,18 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
+// $config['cookie_prefix']    = '';
+// $config['cookie_domain']    = 'http://bansar.local';
+// $config['cookie_path']        = '/';
+// $config['cookie_secure']    = FALSE;
+// $config['cookie_httponly']     = FALSE;
+
 $config['cookie_prefix']    = '';
 $config['cookie_domain']    = '';
 $config['cookie_path']        = '/';
 $config['cookie_secure']    = FALSE;
 $config['cookie_httponly']     = FALSE;
+
 
 /*
 |--------------------------------------------------------------------------

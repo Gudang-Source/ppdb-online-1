@@ -57,12 +57,21 @@
                             <label for="rememberme">Remember Me</label>
                         </div>
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit">Masuk</button>
+                            <button class="btn btn-block bg-green waves-effect" type="submit">Masuk</button>
                         </div>
+
                     </div>
                 </form>
             </div>
         </div>
+        <?php
+        if ($this->session->flashdata('error')) {
+            echo '<div class="alert alert-danger" role="alert">
+            ' . $this->session->flashdata('error') . '
+        </div>';
+        }
+
+        ?>
     </div>
 
     <!-- Jquery Core Js -->

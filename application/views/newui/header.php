@@ -42,12 +42,12 @@
     <!-- <script src="<?php echo base_url(); ?>assets/build/js/materialize.min.js"></script> -->
 </head>
 
-<body class="theme-red">
+<body class="theme-green">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
-                <div class="spinner-layer pl-red">
+                <div class="spinner-layer pl-green">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
                     </div>
@@ -115,8 +115,9 @@
                         </a>
                     </li>
                     <?php
+                    // var_dump($this->session->userdata());
                     $active = $this->uri->segment(1) == 'cetak' || $this->uri->segment(1) == 'Admin_site' ? 'active' : '';
-                    if (!$this->session->userdata('masuk')) {
+                    if (!$this->session->userdata('user')) {
                         $url = 'login';
                         $action = 'LOGIN';
                     } else {
@@ -159,7 +160,7 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
                     <ul class="demo-choose-skin">
-                        <li data-theme="red" class="active">
+                        <li data-theme="red">
                             <div class="red"></div>
                             <span>Red</span>
                         </li>
@@ -195,7 +196,7 @@
                             <div class="teal"></div>
                             <span>Teal</span>
                         </li>
-                        <li data-theme="green">
+                        <li data-theme="green" class="active">
                             <div class="green"></div>
                             <span>Green</span>
                         </li>

@@ -21,7 +21,6 @@ class Auth_model extends CI_Model
 		$this->db->where("username", $username);
 		$query = $this->db->get($this->table);
 
-
 		if ($query->num_rows()) {
 			// found row by username
 			$row = $query->row_array();

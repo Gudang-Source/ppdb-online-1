@@ -14,6 +14,9 @@ class Pendaftaran extends CI_Controller
 
     function index()
     {
+
+        $user['masuk'] = TRUE;
+        $this->session->set_userdata('user', $user);
         $this->load->view('form', NULL);
     }
     public function newForm($value = '')
@@ -184,6 +187,8 @@ class Pendaftaran extends CI_Controller
             // $this->compileView('newui/pdf', $data);
             $this->getPdf($siswa, $ayah, $ibu, $wali, $surat, $kemampuan);
         } else {
+            // if
+            // var_dump($this->session->userdata('user'));
             $data['all'] = $this->Adm_model->all();
             $this->compileView('newui/cetak', $data);
         }

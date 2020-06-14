@@ -21,17 +21,24 @@
                         <h2>
                             CETAK FORMULIR
                         </h2>
-                        <p>Silahkan cari nama calon siswa di kolom search</p>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <input style="border:1px solid #eeeeee;border-radius:.4rem;margin-top:1rem;" type="text" id="search" name="search" class="form-control" placeholder="Cari Nik atau NISN">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <button class="btn btn-primary" style="margin-top:1rem;">Cari</button>
-                        </div>
+                        <?php
+                        if (!$this->session->userdata('user')) {
+                        ?>
+                            <p>Silahkan cari nama calon siswa di kolom search</p>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input style="border:1px solid #eeeeee;border-radius:.4rem;margin-top:1rem;" type="text" id="search" name="search" class="form-control" placeholder="Cari Nik atau NISN">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <button class="btn btn-primary" style="margin-top:1rem;">Cari</button>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+
                     </div>
                     <div class="body">
                         <table id="table-cetak" class="table table-bordered table-striped table-hover dataTable">
@@ -61,7 +68,6 @@
     $(document).ready(function() {
         $('#table-cetak').DataTable({
             "ajax": "<?= base_url() . 'data_siswa' ?>",
-            <?= !$this->session->userdata('masuk') ?  '"searching": false' : '' ?>,
             "bLengthChange": false,
             "scrollX": true,
             "columns": [{
@@ -90,8 +96,9 @@
                     render: function(data, type, row) {
                         return `<button onclick="printCalonSiswa('${row.id_siswa}')" class="waves-effect waves-light btn btn-primary btn-xs" type="button"><i class="material-icons left">local_printshop</i> Cetak</button>`
                     }
-                }
-            ]
+                },
+            ],
+            <?= !$this->session->userdata('user') ?  '"searching": false,' : '' ?>
         });
     });
 
