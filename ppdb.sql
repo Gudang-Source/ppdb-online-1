@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.24, for Win64 (x86_64)
 --
--- Host: localhost    Database: ppdb
+-- Host: localhost    Database: ppdb_sman1banyusari
 -- ------------------------------------------------------
 -- Server version	5.7.24
 
@@ -16,12 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `ppdb`
+-- Current Database: `ppdb_sman1banyusari`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `ppdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `ppdb_sman1banyusari` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `ppdb`;
+USE `ppdb_sman1banyusari`;
 
 --
 -- Table structure for table `adm`
@@ -317,4 +317,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-14  8:56:43
+-- Dump completed on 2020-06-21 22:59:49
