@@ -23,7 +23,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://bansar.local/PPDB/';
+if ($_SERVER['SERVER_PORT'] != 80) {
+    $port = ':' . $_SERVER['SERVER_PORT'];
+} else {
+    $port = '';
+}
+
+//custom
+$alamat = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . $port . 'http://bansar.local/PPDB/';
+
+$config['base_url']    = $alamat;
 
 /*
 |--------------------------------------------------------------------------
